@@ -38,7 +38,7 @@ class TaskService implements ITaskService
             $userId = auth()->user()->id;
             $taskData = [
                 'title' => $request->input('title'),
-                'description' => $request->input('content'),
+                'description' => $request->input('description'),
                 'status' => $request->input('status'),
                 'due_date' => $request->input('due_date'),
                 'user_id' => $userId,
