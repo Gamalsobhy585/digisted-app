@@ -18,7 +18,7 @@ interface ITask
     public function bulkRestore($ids);
     public function bulkForceDelete($ids);
     public function import($tasks);
-    public function reorder($taskIds);
+    public function swapOrder($firstTaskId, $secondTaskId, $userId);
     public function createTaskWithOrder(array $taskData);
 
 

@@ -81,6 +81,10 @@ return
         'import_failed' => 'فشل استيراد الملف',
         'reordered' => 'تم إعادة ترتيب المهام بنجاح',
         'reorder_failed' => 'فشل إعادة ترتيب المهام',
+        'task_first_task_id_required' => 'معرف المهمة الأولى مطلوب.',
+        'task_first_task_id_exists' => 'المهمة الأولى غير موجودة.',
+        'task_second_task_id_required' => 'معرف المهمة الثانية مطلوب.',
+        'task_second_task_id_exists' => 'المهمة الثانية غير موجودة.',
         
     ],
 

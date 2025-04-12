@@ -11,6 +11,7 @@ use App\Services\Interface\ITaskService;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Http\Requests\ImportTaskRequest;
+use App\Http\Requests\SwapOrderRequest;
 
 
 
@@ -273,21 +274,23 @@ class TaskController extends Controller
         }
     }
     
-    public function reorder(Request $request)
-    {
-        try {
-            $result = $this->taskService->reorder($request);
-            return $this->returnData(
-                __('messages.task.reordered'),
-                $result, 
-                200
-            );
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return $this->returnErrorNotAbort(
-                __('messages.task.reorder_failed'),
-                500
-            );
-        }
+// Controller file
+public function swapOrder(SwapOrderRequest $request)
+{
+    try {
+        $result = $this->taskService->swapOrder($request);
+        
+        return $this->returnData(
+            __('messages.task.reordered'),
+            $result, 
+            200
+        );
+    } catch (\Exception $e) {
+        Log::error($e->getMessage());
+        return $this->returnErrorNotAbort(
+            __('messages.task.reorder_failed'),
+            500
+        );
     }
+}
 }

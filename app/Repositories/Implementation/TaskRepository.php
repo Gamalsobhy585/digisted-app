@@ -161,18 +161,21 @@ class TaskRepository implements ITask
         return Task::insert($tasks);
     }
     
-    public function reorder($taskIds)
+    public function swapOrder($firstTaskId, $secondTaskId, $userId)
     {
-        DB::transaction(function () use ($taskIds) {
-            foreach ($taskIds as $index => $id) {
-                Task::where('id', $id)->update(['order' => $index + 1]);
-            }
+        DB::transaction(function () use ($firstTaskId, $secondTaskId, $userId) {
+            $firstTask = Task::where('user_id', $userId)->findOrFail($firstTaskId);
+            $secondTask = Task::where('user_id', $userId)->findOrFail($secondTaskId);
+            
+            $firstTaskOrder = $firstTask->order;
+            $secondTaskOrder = $secondTask->order;
+            
+            $firstTask->update(['order' => $secondTaskOrder]);
+            $secondTask->update(['order' => $firstTaskOrder]);
         });
         
         return true;
     }
-
-
     public function createTaskWithOrder(array $taskData)
     {
         $taskData['order'] = Task::where('user_id', $taskData['user_id'])

@@ -79,7 +79,12 @@ return [
         "imported"=>"file imported successfully",
         "import_failed"=>"file failed to be imported",
         "reordered"=>"tasks reordered successfully",
-        "reorder_failed"=>"failed to reorder Tasks"
+        "reorder_failed"=>"failed to reorder Tasks",
+        'task_first_task_id_required' => 'The first task ID is required.',
+        'task_first_task_id_exists' => 'The first task does not exist.',
+        'task_second_task_id_required' => 'The second task ID is required.',
+        'task_second_task_id_exists' => 'The second task does not exist.',
+        
 
     ],
 

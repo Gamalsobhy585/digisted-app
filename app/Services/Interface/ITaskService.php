@@ -15,7 +15,7 @@ interface ITaskService
     public function bulkRestore($ids);
     public function bulkForceDelete($ids);
     public function import($request);
-    public function reorder($request);
+    public function swapOrder($request);
 
 
 

@@ -222,10 +222,15 @@ class TaskService implements ITaskService
         }
     }
     
-    public function reorder($request)
+ // Service file
+    public function swapOrder($request)
     {
         try {
-            $this->Taskrepo->reorder($request->input('task_ids'));
+            $userId = auth()->id();
+            $firstTaskId = $request->input('first_task_id');
+            $secondTaskId = $request->input('second_task_id');
+            
+            $this->Taskrepo->swapOrder($firstTaskId, $secondTaskId, $userId);
             return true;
         } catch (\Exception $e) {
             Log::error($e->getMessage());
