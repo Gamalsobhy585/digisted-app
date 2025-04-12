@@ -12,11 +12,21 @@ class TaskResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'status' => $this->status,
+            'status' => $this->mapStatus($this->status),
             'due_date' => $this->due_date,
 
         ];
     }
+
+    protected function mapStatus(int $status): string
+    {
+        return match($status) {
+            1 => 'pending',
+            2 => 'completed',
+            default => 'unknown',
+        };
+    }
+    
 
     public static function collection($resource)
     {
@@ -37,6 +47,8 @@ class TaskResource extends JsonResource
             ]
         ]);
     }
+
+
 
 
 }
