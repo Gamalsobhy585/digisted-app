@@ -1,8 +1,27 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+
+Route::middleware(["lang", "cors"])->group(function () {
+    require __DIR__ . '/authentication.php';
+    require __DIR__ . '/task.php';
+    require __DIR__ . '/category.php';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
