@@ -38,7 +38,7 @@ class TaskController extends Controller
             );
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-             $this->returnError(__('messages.task.get_failed'), 500);
+             $this->returnError( $e->getMessage(), 500);
         }
     }
 
