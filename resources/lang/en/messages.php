@@ -84,6 +84,7 @@ return [
         'task_first_task_id_exists' => 'The first task does not exist.',
         'task_second_task_id_required' => 'The second task ID is required.',
         'task_second_task_id_exists' => 'The second task does not exist.',
+        'no_trashed_tasks'=>'the Tasks should be trashed first',
         
 
     ],

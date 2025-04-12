@@ -85,6 +85,7 @@ return
         'task_first_task_id_exists' => 'المهمة الأولى غير موجودة.',
         'task_second_task_id_required' => 'معرف المهمة الثانية مطلوب.',
         'task_second_task_id_exists' => 'المهمة الثانية غير موجودة.',
+        'no_trashed_tasks'=>'المهام غير موجودة بالمحذوفات'
         
     ],
 

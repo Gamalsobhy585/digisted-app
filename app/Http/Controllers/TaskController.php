@@ -274,8 +274,7 @@ class TaskController extends Controller
         }
     }
     
-// Controller file
-public function swapOrder(SwapOrderRequest $request)
+public function changePriority(SwapOrderRequest $request)
 {
     try {
         $result = $this->taskService->swapOrder($request);

@@ -13,7 +13,7 @@ Route::middleware('auth:sanctum')->group(function ()
         Route::get('/deleted', [TaskController::class, 'getDeletedTasks']);
         Route::post('/', [TaskController::class, 'store']);
         Route::post('/import', [TaskController::class, 'import']); 
-        Route::post('/reorder', [TaskController::class, 'reorder']); 
+        Route::post('/priority/change', [TaskController::class, 'changePriority']); 
         Route::delete('/bulk-delete', [TaskController::class, 'bulkDelete']);
         Route::post('/bulk-restore', [TaskController::class, 'bulkRestore']);
         Route::delete('/bulk-force-delete', [TaskController::class, 'bulkForceDelete']);
