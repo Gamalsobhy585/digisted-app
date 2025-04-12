@@ -83,10 +83,10 @@ class TaskRepository implements ITask
             throw $e;
         }
     }
-
-    public function forceDelete($model)
+    public function forceDelete($id)
     {
-        return $model->forceDelete();
+        $task = Task::onlyTrashed()->findOrFail($id);
+        return $task->forceDelete();
     }
     public function bulkDelete($ids)
     {
@@ -180,6 +180,8 @@ class TaskRepository implements ITask
         
         return Task::create($taskData);
     }
+
+
 
 
 

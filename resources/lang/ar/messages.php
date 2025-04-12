@@ -76,6 +76,12 @@ return
         "partial_bulk_restored" => "بعض المهام لم يتم استعادتها بنجاح",
         "partial_bulk_force_deleted" => "بعض المهام لم يتم حذفها نهائيًا بنجاح",
         "bulk_force_deleted" => "تم حذف المهام نهائيًا بنجاح",
+        "force_deleted"=>"تم حذف المهمة نهائيًا بنجاح",
+        'imported' => 'تم استيراد الملف بنجاح',
+        'import_failed' => 'فشل استيراد الملف',
+        'reordered' => 'تم إعادة ترتيب المهام بنجاح',
+        'reorder_failed' => 'فشل إعادة ترتيب المهام',
+        
     ],
 
 

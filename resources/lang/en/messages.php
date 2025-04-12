@@ -75,6 +75,12 @@ return [
         "partial_bulk_restored" => "Some tasks were not restored successfully",
         "partial_bulk_force_deleted" => "Some tasks were not force deleted successfully",
         "bulk_force_deleted" => "Tasks force deleted successfully",
+        "force_deleted"=>"Task force deleted successfully",
+        "imported"=>"file imported successfully",
+        "import_failed"=>"file failed to be imported",
+        "reordered"=>"tasks reordered successfully",
+        "reorder_failed"=>"failed to reorder Tasks"
+
     ],
 
 

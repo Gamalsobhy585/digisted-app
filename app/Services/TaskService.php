@@ -108,24 +108,15 @@ class TaskService implements ITaskService
         }
     }
 
-
     public function forceDelete($id)
     {
         try {
-            $task = $this->Taskrepo->getById($id);
-            if (!$task) {
-                return null;
-            }
-            return $this->Taskrepo->forceDelete($task);
+            return $this->Taskrepo->forceDelete($id);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
             throw $e;
         }
-        
     }
-
-
-  
 
     public function bulkDelete($ids)
     {

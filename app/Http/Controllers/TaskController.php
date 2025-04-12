@@ -143,20 +143,19 @@ class TaskController extends Controller
         }
     }
 
-    public function forceDelete(Task $task)
+    public function forceDelete($id)
     {
         try {
-            $result = $this->taskService->forceDelete($task->id);
-            if (!$result) {
-                 $this->returnError(__('messages.task.not_found'), 404);
-            }
+            $this->taskService->forceDelete($id);
             return $this->success(
-                __('messages.task.deleted'),
+                __('messages.task.force_deleted'),
                 200
             );
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-             $this->returnError(__('messages.task.delete_failed'), 500);
+        }  catch (\Exception $e) {
+            return $this->returnErrorNotAbort(
+                __('messages.task.force_delete_failed'),
+                500
+            );
         }
     }
     public function bulkDelete(Request $request)
