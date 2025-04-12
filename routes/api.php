@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(["lang", "cors"])->group(function () {
     require __DIR__ . '/authentication.php';
     require __DIR__ . '/task.php';
-    require __DIR__ . '/category.php';
 });
 
 
