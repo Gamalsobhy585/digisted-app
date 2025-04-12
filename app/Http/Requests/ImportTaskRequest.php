@@ -14,7 +14,7 @@ class ImportTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'required|file|mimes:xlsx,xls,csv'
+            'file' => 'required|file|mimes:xlsx,xls,csv,pdf'
         ];
     }
 
