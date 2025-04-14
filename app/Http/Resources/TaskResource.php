@@ -8,13 +8,13 @@ class TaskResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
-    return [
+        return [
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'status' => $this->mapStatus($this->status),
+            'status' => $this->status, 
+            'status_display' => $this->mapStatus($this->status), 
             'due_date' => $this->due_date,
-
         ];
     }
 
