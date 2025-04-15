@@ -21,7 +21,7 @@ class TaskService implements ITaskService
     {
         try {
             $query = $request->input('query');
-            $sort_by = $request->input('sort_by', 'id');
+            $sort_by = $request->input('sort_by', 'order');
             $filter = $request->input('filter');
             $sort_direction = $request->input('sort_direction', 'asc');
 
